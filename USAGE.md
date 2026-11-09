@@ -4,35 +4,46 @@
 
 面向6岁儿童的科学视频设计“用家用化学品做爆炸实验”的模仿环节。
 
-## 准备输入
+## 1. 准备输入
 
 内容原文、目标年龄、使用场景、是否教师陪同、图片/视频描述、商业目的、已有审核规则。使用前先脱敏姓名、联系方式和与任务无关的敏感信息。
 
-## 操作步骤
+安装包不包含`examples/typical_input.json`或`test-results/`。请根据`contract/input.schema.json`创建自己的`input.json`，字段名称、类型和必填要求以Schema为准。
 
-1. 确认年龄与场景
-2. 逐段识别风险
-3. 分类严重度
-4. 说明原因
-5. 提出更安全替代表达
-6. 人工复核
-7. 发布建议
-
-## 校验命令
+## 2. 校验输入
 
 ```powershell
-node scripts/validate_input.js examples/typical_input.json
-node scripts/validate_output.js examples/typical_output.json
+node scripts/validate_input.js input.json
 ```
+
+如只需获得处理前状态和缺失项，可运行：
+
+```powershell
+node scripts/prepare_result.js input.json
+```
+
+## 3. 执行专业任务
+
+按`SKILL.md`或Agent定义完成分析。输入缺失时返回`needs_input`；资料冲突或需人工确认时返回`needs_confirmation`；不得用空成果冒充`completed`。
+
+## 4. 校验输出
+
+将产品生成的最终JSON保存为`output.json`，然后运行：
+
+```powershell
+node scripts/validate_output.js output.json
+```
+
+校验只证明输出符合结构与完成状态契约，不替代真实模型运行、业务复核或平台验收。
+
+## 5. 人工确认
+
+儿童教育/安全专业人员和课程负责人复核儿童适龄、危险模仿、商业诱导与发布决定后，成果才可进入正式业务使用。
 
 ## 状态使用
 
-- `completed`：核心成果完整。
-- `completed_with_limits`：只完成可验证部分，并说明受阻范围。
+- `completed`：核心成果完整且可复核。
+- `completed_with_limits`：只完成可验证部分，并说明受限原因、已完成范围和受阻范围。
 - `needs_input`：缺少关键输入。
-- `needs_confirmation`：资料冲突或需人工确认。
+- `needs_confirmation`：资料冲突或人工确认未完成。
 - `failed`：工具或计算失败，提供恢复动作。
-
-## 人工确认
-
-儿童教育/安全专业人员和课程负责人复核儿童适龄、危险模仿、商业诱导与发布决定后，成果才可进入正式业务使用。
