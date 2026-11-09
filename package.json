@@ -1,0 +1,15 @@
+{
+  "name": "edu-child-content-safety-review",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Child Content Safety and Age Suitability Review",
+  "license": "Apache-2.0",
+  "scripts": {
+    "test": "node tests/run_tests.js",
+    "validate:input": "node scripts/validate_input.js examples/typical_input.json",
+    "validate:output": "node scripts/validate_output.js examples/typical_output.json"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.jinlize.tech/education/JLZ-EDU-SK-096/input.schema.json",
+  "title": "儿童内容适龄与安全审查输入契约",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "data_status",
+    "contains_sensitive_data",
+    "content_text",
+    "target_age",
+    "context",
+    "teacher_supervision",
+    "commercial_purpose"
+  ],
+  "properties": {
+    "contract_version": {
+      "const": "1.2.0"
+    },
+    "data_status": {
+      "type": "string",
+      "enum": [
+        "confirmed",
+        "partially_confirmed",
+        "unconfirmed"
+      ],
+      "description": "输入资料的确认状态"
+    },
+    "contains_sensitive_data": {
+      "type": "boolean"
+    },
+    "requested_output_language": {
+      "type": "string",
+      "enum": [
+        "zh-CN",
+        "en"
+      ],
+      "default": "zh-CN"
+    },
+    "content_text": {
+      "title": "待审儿童内容",
+      "description": "课程、故事、活动或广告文案",
+      "type": "string",
+      "minLength": 1
+    },
+    "target_age": {
+      "title": "目标年龄",
+      "description": "明确最小和最大年龄",
+      "type": "string",
+      "minLength": 1
+    },
+    "context": {
+      "title": "使用场景",
+      "description": "课堂、家庭、线上或线下",
+      "type": "string",
+      "minLength": 1
+    },
+    "teacher_supervision": {
+      "title": "是否教师陪同",
+      "description": "决定风险阈值",
+      "type": "boolean"
+    },
+    "media_description": {
+      "title": "图片视频或实验描述",
+      "description": "无原始媒体时可用文字描述",
+      "type": "string",
+      "minLength": 1
+    },
+    "commercial_purpose": {
+      "title": "商业目的",
+      "description": "是否用于招生或销售",
+      "type": "boolean"
+    },
+    "existing_review_rules": {
+      "title": "现有审核规则",
+      "description": "机构已有标准",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    }
+  }
+}

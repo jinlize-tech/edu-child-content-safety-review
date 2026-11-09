@@ -1,0 +1,94 @@
+{
+  "contract_version": "1.2.0",
+  "product_id": "JLZ-EDU-SK-096",
+  "product_name": "儿童内容适龄与安全审查",
+  "product_type": "Skill",
+  "repository_name": "edu-child-content-safety-review",
+  "repository_url": "https://github.com/jinlize-tech/edu-child-content-safety-review",
+  "product_version": "1.0.0",
+  "batch": 2,
+  "business_category": "16 课程资产与知识产权中心",
+  "high_risk": true,
+  "deterministic": false,
+  "agent": false,
+  "core_outputs": [
+    "儿童内容审核表",
+    "风险段",
+    "发布结论"
+  ],
+  "optional_outputs": [
+    "年龄适配建议",
+    "替换示例",
+    "需专业复核项"
+  ],
+  "all_outputs": [
+    "儿童内容审核表",
+    "风险段",
+    "发布结论",
+    "年龄适配建议",
+    "替换示例",
+    "需专业复核项"
+  ],
+  "human_review_required": true,
+  "reviewer_role": "儿童教育/安全专业人员和课程负责人",
+  "commercial_boundary": null,
+  "input_required": [
+    "contract_version",
+    "data_status",
+    "contains_sensitive_data",
+    "content_text",
+    "target_age",
+    "context",
+    "teacher_supervision",
+    "commercial_purpose"
+  ],
+  "input_properties": {
+    "contract_version": {
+      "type": "string"
+    },
+    "data_status": {
+      "type": "string",
+      "enum": [
+        "confirmed",
+        "partially_confirmed",
+        "unconfirmed"
+      ]
+    },
+    "contains_sensitive_data": {
+      "type": "boolean"
+    },
+    "requested_output_language": {
+      "type": "string",
+      "enum": [
+        "zh-CN",
+        "en"
+      ],
+      "default": "zh-CN"
+    },
+    "content_text": {
+      "type": "string"
+    },
+    "target_age": {
+      "type": "string"
+    },
+    "context": {
+      "type": "string"
+    },
+    "teacher_supervision": {
+      "type": "boolean"
+    },
+    "media_description": {
+      "type": "string"
+    },
+    "commercial_purpose": {
+      "type": "boolean"
+    },
+    "existing_review_rules": {
+      "type": "array"
+    }
+  },
+  "expected_scenario_count": 12,
+  "license": "Apache-2.0",
+  "runtime_status": "MODEL_RUNTIME_NOT_VERIFIED",
+  "workbuddy_validation": "NOT_EXECUTED"
+}

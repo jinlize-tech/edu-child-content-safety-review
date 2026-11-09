@@ -1,0 +1,137 @@
+{
+  "cases": [
+    {
+      "case_id": "normal_complete",
+      "expected_status": "READY_FOR_PROCESSING",
+      "instance": {
+        "contract_version": "1.2.0",
+        "data_status": "confirmed",
+        "contains_sensitive_data": false,
+        "requested_output_language": "zh-CN",
+        "content_text": "待审儿童内容已核对（脱敏示例）",
+        "target_age": "目标年龄已核对（脱敏示例）",
+        "context": "使用场景已核对（脱敏示例）",
+        "teacher_supervision": false,
+        "media_description": "图片视频或实验描述已核对（脱敏示例）",
+        "commercial_purpose": false,
+        "existing_review_rules": [
+          {}
+        ]
+      }
+    },
+    {
+      "case_id": "missing_required",
+      "expected_status": "NEEDS_INPUT",
+      "instance": {
+        "contract_version": "1.2.0",
+        "data_status": "confirmed",
+        "contains_sensitive_data": false,
+        "requested_output_language": "zh-CN",
+        "target_age": "目标年龄已核对（脱敏示例）",
+        "context": "使用场景已核对（脱敏示例）",
+        "teacher_supervision": false,
+        "media_description": "图片视频或实验描述已核对（脱敏示例）",
+        "commercial_purpose": false,
+        "existing_review_rules": [
+          {}
+        ]
+      }
+    },
+    {
+      "case_id": "invalid_type",
+      "expected_status": "INVALID_INPUT",
+      "instance": {
+        "contract_version": "1.2.0",
+        "data_status": "confirmed",
+        "contains_sensitive_data": false,
+        "requested_output_language": "zh-CN",
+        "content_text": 123,
+        "target_age": "目标年龄已核对（脱敏示例）",
+        "context": "使用场景已核对（脱敏示例）",
+        "teacher_supervision": false,
+        "media_description": "图片视频或实验描述已核对（脱敏示例）",
+        "commercial_purpose": false,
+        "existing_review_rules": [
+          {}
+        ]
+      }
+    },
+    {
+      "case_id": "unconfirmed",
+      "expected_status": "NEEDS_CONFIRMATION",
+      "instance": {
+        "contract_version": "1.2.0",
+        "data_status": "unconfirmed",
+        "contains_sensitive_data": false,
+        "requested_output_language": "zh-CN",
+        "content_text": "待审儿童内容已核对（脱敏示例）",
+        "target_age": "目标年龄已核对（脱敏示例）",
+        "context": "使用场景已核对（脱敏示例）",
+        "teacher_supervision": false,
+        "media_description": "图片视频或实验描述已核对（脱敏示例）",
+        "commercial_purpose": false,
+        "existing_review_rules": [
+          {}
+        ]
+      }
+    },
+    {
+      "case_id": "partial_confirmation",
+      "expected_status": "NEEDS_CONFIRMATION",
+      "instance": {
+        "contract_version": "1.2.0",
+        "data_status": "partially_confirmed",
+        "contains_sensitive_data": false,
+        "requested_output_language": "zh-CN",
+        "content_text": "待审儿童内容已核对（脱敏示例）",
+        "target_age": "目标年龄已核对（脱敏示例）",
+        "context": "使用场景已核对（脱敏示例）",
+        "teacher_supervision": false,
+        "media_description": "图片视频或实验描述已核对（脱敏示例）",
+        "commercial_purpose": false,
+        "existing_review_rules": [
+          {}
+        ]
+      }
+    },
+    {
+      "case_id": "sensitive_marked",
+      "expected_status": "READY_WITH_PRIVACY_WARNING",
+      "instance": {
+        "contract_version": "1.2.0",
+        "data_status": "confirmed",
+        "contains_sensitive_data": true,
+        "requested_output_language": "zh-CN",
+        "content_text": "待审儿童内容已核对（脱敏示例）",
+        "target_age": "目标年龄已核对（脱敏示例）",
+        "context": "使用场景已核对（脱敏示例）",
+        "teacher_supervision": false,
+        "media_description": "图片视频或实验描述已核对（脱敏示例）",
+        "commercial_purpose": false,
+        "existing_review_rules": [
+          {}
+        ]
+      }
+    },
+    {
+      "case_id": "undeclared_field",
+      "expected_status": "INVALID_INPUT",
+      "instance": {
+        "contract_version": "1.2.0",
+        "data_status": "confirmed",
+        "contains_sensitive_data": false,
+        "requested_output_language": "zh-CN",
+        "content_text": "待审儿童内容已核对（脱敏示例）",
+        "target_age": "目标年龄已核对（脱敏示例）",
+        "context": "使用场景已核对（脱敏示例）",
+        "teacher_supervision": false,
+        "media_description": "图片视频或实验描述已核对（脱敏示例）",
+        "commercial_purpose": false,
+        "existing_review_rules": [
+          {}
+        ],
+        "未声明字段": "不应被接受"
+      }
+    }
+  ]
+}

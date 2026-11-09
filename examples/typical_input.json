@@ -1,0 +1,15 @@
+{
+  "contract_version": "1.2.0",
+  "data_status": "confirmed",
+  "contains_sensitive_data": false,
+  "requested_output_language": "zh-CN",
+  "content_text": "待审儿童内容已核对（脱敏示例）",
+  "target_age": "目标年龄已核对（脱敏示例）",
+  "context": "使用场景已核对（脱敏示例）",
+  "teacher_supervision": false,
+  "media_description": "图片视频或实验描述已核对（脱敏示例）",
+  "commercial_purpose": false,
+  "existing_review_rules": [
+    {}
+  ]
+}

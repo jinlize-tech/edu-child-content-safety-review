@@ -1,0 +1,31 @@
+{
+  "number": 96,
+  "product_id": "JLZ-EDU-SK-096",
+  "candidate_id": "CAND-058",
+  "chinese_name": "儿童内容适龄与安全审查",
+  "english_name": "Child Content Safety and Age Suitability Review",
+  "repository_name": "edu-child-content-safety-review",
+  "repository_url": "https://github.com/jinlize-tech/edu-child-content-safety-review",
+  "product_type": "Skill",
+  "category": "16 课程资产与知识产权中心",
+  "batch": 2,
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "core_outputs": [
+    "儿童内容审核表",
+    "风险段",
+    "发布结论"
+  ],
+  "optional_outputs": [
+    "年龄适配建议",
+    "替换示例",
+    "需专业复核项"
+  ],
+  "high_risk": true,
+  "deterministic": false,
+  "scenario_count": 12,
+  "package_path": "dist/edu-child-content-safety-review-v1.0.0.zip",
+  "runtime_status": "MODEL_RUNTIME_NOT_VERIFIED",
+  "workbuddy_validation": "NOT_EXECUTED",
+  "status": "LOCAL_DEVELOPMENT_COMPLETE_PENDING_REMOTE_VERIFICATION"
+}
